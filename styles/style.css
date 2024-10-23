@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+header ul,
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+
+}
+
+header li,
+footer li {
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #09f;
+}
