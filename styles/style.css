@@ -4,6 +4,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+
+
 * {
     box-sizing: border-box;
 }
@@ -75,15 +77,25 @@ footer {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
     padding: 1em;
     font-family: "Fredoka", Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 500;
     text-align: center;
     background-color: rgba(16, 16, 15, 0.334);
     padding: 1em;
+
+
+
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    /* Dos columnas de igual tamaño para mapa y redes, y una columna más ancha para créditos */
+    grid-gap: 1em;
+    /* Espacio entre las columnas */
+    align-items: last baseline;
+    /* Alinear el contenido verticalmente al centro */
+    padding: 1em;
+    background-color: rgba(16, 16, 15, 0.334);
+    color: white;
 }
 
 footer ul {
@@ -112,4 +124,21 @@ nav a i {
 
 nav a:hover i {
     color: #f67c4f;
+}
+
+@media (max-width: 768px) {
+    footer {
+        /* Cambia a una sola columna */
+        grid-template-columns: 1fr;
+    }
+
+    footer section {
+        text-align: center;
+    }
+
+    #ubicacion iframe {
+        /* Cambia el ancho al 50% en pantallas más pequeñas */
+        width: 50%;
+        height: auto;
+    }
 }
