@@ -1,0 +1,140 @@
+/* iconos */
+@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css');
+
+/* fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.img-responsive {
+    max-width: 50%;
+    height: auto;
+}
+
+#img-mollys {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    background-color: rgb(29, 29, 27);
+    color: white;
+}
+
+header {
+    background-color: rgba(16, 16, 15, 0.334);
+    padding: 1em;
+}
+
+header ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    flex-wrap: wrap;
+    font-family: "Fredoka", Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+}
+
+header li {
+    margin: 0;
+    padding: 1em;
+}
+
+main {
+    margin: 1em;
+}
+
+h2 {
+    font-family: "Fredoka", Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+}
+
+#img-home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#home p,
+footer p {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+footer {
+    list-style-type: none;
+    margin: 0;
+    padding: 1em;
+    font-family: "Fredoka", Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    text-align: center;
+    background-color: rgba(16, 16, 15, 0.334);
+    display: grid;
+    /* Dos columnas de igual tamaño para mapa y redes, y una columna más ancha para créditos */
+    grid-template-columns: 1fr 2fr 1fr;
+    /* Espacio entre las columnas */
+    grid-gap: 1em;
+    /* Alinear el contenido verticalmente abajo */
+    align-items: last baseline;
+    color: white;
+}
+
+footer ul {
+    padding: 0;
+}
+
+footer li {
+    list-style-type: none;
+    padding: 1em;
+    margin: 0;
+}
+
+address {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: #f67c4f;
+}
+
+/* iconos de redes sociales */
+nav a i {
+    font-size: 3em;
+}
+
+nav a:hover i {
+    color: #f67c4f;
+}
+
+/* media querie para cuando el ancho del dispositivo es pequeño */
+@media (max-width: 768px) {
+    footer {
+        /* Cambia a una sola columna */
+        grid-template-columns: 1fr;
+    }
+
+    footer section {
+        text-align: center;
+    }
+
+    #ubicacion iframe {
+        /* Cambia el ancho al 50% */
+        width: 50%;
+        height: auto;
+    }
+}
