@@ -147,6 +147,10 @@ nav a:hover i {
         width: 50%;
         height: auto;
     }
+
+    main h2 {
+        font-size: 2.25em;
+    }
 }
 
 .container {
@@ -160,7 +164,7 @@ nav a:hover i {
 }
 
 .item {
-    width: 40em;
+    width: 30em;
     padding-top: 2em;
 }
 
