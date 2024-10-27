@@ -61,10 +61,11 @@ h2 {
     text-align: center;
 }
 
+/*
 main h2 {
     font-size: 4em;
 }
-
+*/
 #img-home {
     display: flex;
     flex-wrap: wrap;
@@ -148,9 +149,11 @@ nav a:hover i {
         height: auto;
     }
 
+    /*
     main h2 {
         font-size: 2.25em;
     }
+    */
 }
 
 .container {
@@ -164,8 +167,9 @@ nav a:hover i {
 }
 
 .item {
-    width: 30em;
+    width: 20em;
     padding-top: 2em;
+
 }
 
 .img-cerveza {
@@ -177,6 +181,7 @@ nav a:hover i {
 
 .boton {
     border-radius: 10px;
+    height: 4em;
 }
 
 .descripcion {
@@ -192,9 +197,26 @@ nav a:hover i {
     background-size: cover;
     background-position: center;
     position: relative;
+    min-height: 8.7em;
 
 }
 
 #nuestras-cervezas {
     background-image: url("/media/img/fondo-menu-negro.png");
+    padding-top: 2em;
+    padding-bottom: 4em;
+}
+
+#nuestras-cervezas>a {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+    background-color: #c47a3420;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 5em;
 }
