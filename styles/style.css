@@ -186,6 +186,7 @@ nav a:hover i {
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-style: normal;
+    text-align: right;
     background-color: #c47a3420;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -194,7 +195,19 @@ nav a:hover i {
     background-position: center;
     position: relative;
     min-height: 8.7em;
+    align-items: center;
+}
 
+.boton {
+    margin-left: 1em;
+    font-size: 1.25em;
+    height: 2.5em;
+    background: linear-gradient(180deg, #f0f0f0, rgba(255, 255, 255, 0.65));
+}
+
+.boton:hover {
+    background-color: #f67c4fb8;
+    cursor: pointer;
 }
 
 #nuestras-cervezas {
