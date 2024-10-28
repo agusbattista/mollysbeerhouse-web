@@ -211,7 +211,7 @@ nav a:hover i {
 }
 
 #nuestras-cervezas {
-    background-image: url("media/img/fondo-menu-negro.png");
+    background-image: url("../media/img/fondo-menu-negro.png");
     padding-top: 2em;
     padding-bottom: 4em;
 }
