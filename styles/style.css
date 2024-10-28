@@ -5,6 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+/* general */
+
 * {
     box-sizing: border-box;
 }
@@ -22,7 +24,11 @@
 body {
     background-color: #1d1d1b;
     color: white;
+    margin-left: 0;
+    margin-right: 0;
 }
+
+/* header */
 
 header {
     background-color: #10100f55;
@@ -46,14 +52,19 @@ header li {
     padding: 1em;
 }
 
-main {
-    margin: 1em;
+/* main */
+
+#home {
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
 h2 {
     font-family: "Fredoka", Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 500;
+    text-align: center;
 }
+
 
 #img-home {
     display: flex;
@@ -68,6 +79,8 @@ footer p {
     font-weight: 400;
     font-style: normal;
 }
+
+/* footer */
 
 footer {
     list-style-type: none;
@@ -121,7 +134,7 @@ nav a:hover i {
     color: #f67c4f;
 }
 
-/* media querie para cuando el ancho del dispositivo es pequeño */
+/* MEDIA QUERIE (para cuando el ancho del dispositivo es pequeño) */
 @media (max-width: 768px) {
     footer {
         /* Cambia a una sola columna */
@@ -137,4 +150,93 @@ nav a:hover i {
         width: 50%;
         height: auto;
     }
+}
+
+.container {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    justify-content: center;
+    width: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.item {
+    width: 20em;
+    padding-top: 2em;
+
+}
+
+.img-cerveza {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.boton {
+    border-radius: 10px;
+    height: 4em;
+}
+
+.descripcion {
+    display: flex;
+    justify-content: space-around;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: right;
+    background-color: #c47a3420;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 2%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    min-height: 8.7em;
+    align-items: center;
+}
+
+.boton {
+    margin-left: 1em;
+    font-size: 1.25em;
+    height: 2.5em;
+    background: linear-gradient(180deg, #f0f0f0, rgba(255, 255, 255, 0.65));
+}
+
+.boton:hover {
+    background-color: #f67c4fb8;
+    cursor: pointer;
+}
+
+#nuestras-cervezas {
+    background-image: url("/media/img/fondo-menu-negro.png");
+    padding-top: 2em;
+    padding-bottom: 4em;
+}
+
+#nuestras-cervezas>a {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+    background-color: #c47a3420;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 5em;
+}
+
+/* Títulos ocultos */
+
+#home>h1 {
+    display: none;
+}
+
+
+#developer>h2 {
+    display: none;
 }
