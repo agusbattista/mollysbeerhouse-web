@@ -1,3 +1,0 @@
-1 - quitar el pequeño borde negro que tiene abajo el video
-
-2 - resolver el espacio que queda entre las dos imágenes del home cuando la resolución de pantalla es amplia
