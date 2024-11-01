@@ -274,3 +274,61 @@ nav a:hover i {
 #developer>h2 {
     display: none;
 }
+
+/* sección de contacto */
+
+#contacto {
+    padding-top: 2em;
+    padding-bottom: 4em;
+}
+
+#formulario,
+#formulario textarea {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#formulario {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+#formulario>* {
+    width: 50%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#formulario input {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#formulario textarea {
+    height: 25em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#formulario button {
+    margin-top: 2em;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+#formulario button:hover {
+    background-color: #f67c4f;
+    color: #fff;
+    cursor: pointer;
+}
+
+#formulario input,
+#formulario button,
+#formulario textarea {
+    border-radius: 10px;
+}

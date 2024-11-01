@@ -174,13 +174,13 @@
 
         <section id="contacto">
             <h2>CONTACTO</h2>
-            <form action="https://formspree.io/f/xrbgpqqb" method="POST">
+            <form id="formulario" action="https://formspree.io/f/xrbgpqqb" method="POST">
                 <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre" placeholder="Juan Pérez" />
+                <input type="text" name="nombre" id="nombre" maxlength="50" placeholder="Juan Pérez" />
                 <label for="mail">Email</label>
-                <input type="email" name="mail" id="mail" placeholder="juanperez@gmail.com">
+                <input type="email" name="mail" id="mail" maxlength="100" placeholder="juanperez@gmail.com">
                 <label for="comentarios">Comentarios</label>
-                <textarea name="comentarios" id="comentarios" rows="10" cols="50"
+                <textarea name="comentarios" id="comentarios" maxlength="5000"
                     placeholder="Escribí acá tus comentarios y sugerencias..."></textarea>
                 <button type="submit">Enviar</button>
             </form>
