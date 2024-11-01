@@ -168,24 +168,6 @@ nav a:hover i {
     color: #f67c4f;
 }
 
-/* MEDIA QUERIE (para cuando el ancho del dispositivo es pequeño) */
-@media (max-width: 768px) {
-    footer {
-        /* Cambia a una sola columna */
-        grid-template-columns: 1fr;
-    }
-
-    footer section {
-        text-align: center;
-    }
-
-    #ubicacion iframe {
-        /* Cambia el ancho al 50% */
-        width: 50%;
-        height: auto;
-    }
-}
-
 .container {
     display: inline-flex;
     flex-wrap: wrap;
@@ -331,4 +313,27 @@ nav a:hover i {
 #formulario button,
 #formulario textarea {
     border-radius: 10px;
+}
+
+/* MEDIA QUERIE (para cuando el ancho del dispositivo es pequeño) */
+@media (max-width: 768px) {
+    footer {
+        /* Cambia a una sola columna */
+        grid-template-columns: 1fr;
+    }
+
+    footer section {
+        text-align: center;
+    }
+
+    #ubicacion iframe {
+        /* Cambia el ancho al 50% */
+        width: 50%;
+        height: auto;
+    }
+
+    #formulario>* {
+        /* agranda el ancho que ocupan los campos del formulario */
+        width: 80%;
+    }
 }
