@@ -15,3 +15,5 @@
 - El deploy del sitio se hará en GitHub Pages.
 
 - La página web será de software libre bajo la licencia GNU GPL v3.0.
+
+#### (Sitio en construcción)
