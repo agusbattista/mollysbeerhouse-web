@@ -101,10 +101,6 @@ h2 {
   text-align: center;
 }
 
-#img-home {
-  display: flex;
-}
-
 #home p,
 footer p {
   text-align: center;
@@ -312,6 +308,20 @@ nav a:hover i {
   border-radius: 10px;
 }
 
+/* imágenes de cervezas y papas (pantallas grandes) */
+
+/* contenedor */
+.img-galeria {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* imágenes */
+.img-galeria img {
+  width: 30%;
+  height: auto;
+}
+
 /* MEDIA QUERIE (para cuando el ancho del dispositivo es pequeño) */
 @media (max-width: 768px) {
   footer {
@@ -332,5 +342,35 @@ nav a:hover i {
   #formulario > * {
     /* agranda el ancho que ocupan los campos del formulario */
     width: 80%;
+  }
+
+  /* galería de imágenes de cervezas y papas (pantallas chicas) */
+
+  /* contenedor */
+  .img-galeria {
+    /* permite el scroll horizontal */
+    overflow-x: auto;
+    /* hace que el scroll vaya de imagen en imagen */
+    scroll-snap-type: x mandatory;
+    width: 100%;
+  }
+
+  /* imágenes */
+  .img-galeria img {
+    /* cada imagen ocupa 85vw de ancho para que se vea que no es la única */
+    width: 85vw;
+    height: auto;
+    /* centra cada imagen al hacer scroll */
+    scroll-snap-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 54px;
+  }
+
+  /* imagen del centro */
+  .img-galeria img:nth-child(2) {
+    /* agrega padding a ambos lados de la imagen del medio para que se separen entre sí */
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
