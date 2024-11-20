@@ -182,12 +182,12 @@
             <h2>CONTACTO</h2>
             <form id="formulario" action="https://formspree.io/f/xrbgpqqb" method="POST">
                 <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre" maxlength="50" placeholder="Juan Pérez" />
-                <label for="mail">Email</label>
-                <input type="email" name="mail" id="mail" maxlength="100" placeholder="juanperez@gmail.com">
+                <input type="text" name="nombre" id="nombre" maxlength="50" placeholder="Juan Pérez" required />
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" maxlength="100" placeholder="juanperez@gmail.com" required>
                 <label for="comentarios">Comentarios</label>
                 <textarea name="comentarios" id="comentarios" maxlength="5000"
-                    placeholder="Escribí acá tus comentarios y sugerencias..."></textarea>
+                    placeholder="Escribí acá tus comentarios y sugerencias..." required></textarea>
                 <button type="submit">Enviar</button>
             </form>
         </section>
