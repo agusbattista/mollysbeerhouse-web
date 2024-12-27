@@ -192,11 +192,10 @@ nav a:hover i {
 
 .descripcion {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-style: normal;
-  text-align: right;
   background-color: #c47a3420;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -204,8 +203,6 @@ nav a:hover i {
   background-size: cover;
   background-position: center;
   position: relative;
-  min-height: 8.7em;
-  align-items: center;
 }
 
 .boton {
@@ -224,20 +221,6 @@ nav a:hover i {
   background-image: url("../media/img/fondo-menu-negro.png");
   padding-top: 2em;
   padding-bottom: 4em;
-}
-
-#nuestras-cervezas > a {
-  width: fit-content;
-  display: flex;
-  justify-content: center;
-  padding: 1em;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
-  font-size: 1.2em;
-  background-color: #c47a3420;
-  border-radius: 15px;
-  margin: auto;
-  margin-top: 5em;
 }
 
 /* Títulos ocultos */
