@@ -356,4 +356,9 @@ nav a:hover i {
     padding-left: 20px;
     padding-right: 20px;
   }
+
+  #img-mollys > img {
+    max-width: 100%;
+    height: auto;
+  }
 }
