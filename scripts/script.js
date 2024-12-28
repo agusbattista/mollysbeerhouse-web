@@ -173,8 +173,12 @@ function mostrarFavoritos() {
   //si hay cervezas favoritas, muestro el título, caso contrario no
   if (favoritos.length > 0) {
     document.getElementById("cervezas-favoritas").style.display = "block";
+    document.getElementById("a-favoritas").style.display = "block";
+    document.getElementById("a-footer-favoritas").style.display = "block";
   } else {
     document.getElementById("cervezas-favoritas").style.display = "none";
+    document.getElementById("a-favoritas").style.display = "none";
+    document.getElementById("a-footer-favoritas").style.display = "none";
   }
 
   const favoritosContainer = document.querySelector(".favoritas-container");
