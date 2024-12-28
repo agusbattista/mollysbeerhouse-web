@@ -401,9 +401,9 @@ nav a:hover i {
     /* Cambia a una sola fila */
     grid-template-areas:
       "logo"
+      "navbar"
       "horarios"
       "redes-sociales"
-      "navbar"
       "developer";
   }
 }
