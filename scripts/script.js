@@ -119,7 +119,7 @@ function crearCard(cerveza) {
   boton.onclick = () => agregarAFavoritos(cerveza.id);
 
   // Verificar si la cerveza ya está en favoritos y agregar la clase "activo" si así es
-  if (favoritos.includes(cerveza)) {
+  if (favoritos.some((fav) => fav.id === cerveza.id)) {
     boton.classList.add("activo");
   }
 
@@ -147,18 +147,22 @@ const favoritos = [];
 
 //función para agregar y eliminar cervezas a favoritos
 function agregarAFavoritos(id) {
-  const cerveza = cervezas.find((cerveza) => cerveza.id === id);
+  const existeFavorito = favoritos.find((fav) => fav.id === id);
+  const cervezaEncontrada = cervezas.find((cerveza) => cerveza.id === id);
   const boton = document.querySelector(`#boton-${id}`);
-  if (!favoritos.includes(cerveza)) {
-    favoritos.push(cerveza);
-    console.log(`Cerveza ${cerveza.nombre} agregada a favoritos`);
+
+  if (!existeFavorito) {
+    favoritos.push(cervezaEncontrada);
+    console.log(`Cerveza ${cervezaEncontrada.nombre} agregada a favoritos`);
     boton.classList.add("activo");
   } else {
-    const index = favoritos.indexOf(cerveza);
+    const index = favoritos.indexOf(existeFavorito);
     favoritos.splice(index, 1);
-    console.log(`Cerveza ${cerveza.nombre} eliminada de favoritos`);
+    console.log(`Cerveza ${existeFavorito.nombre} eliminada de favoritos`);
     boton.classList.remove("activo");
   }
+  // Guardar los cambios en el localStorage
+  guardarFavoritos();
   console.log(favoritos);
   //actualizar la sección de favoritos
   mostrarFavoritos();
@@ -189,8 +193,27 @@ function mostrarFavoritos() {
   favoritosContainer.appendChild(fragmento);
 }
 
+// Función para guardar favoritos en el localStorage
+function guardarFavoritos() {
+  const favoritosJSON = JSON.stringify(favoritos);
+  localStorage.setItem("favoritos", favoritosJSON);
+}
+
+// Función para cargar favoritos desde el localStorage
+function cargarFavoritos() {
+  const favoritosJSON = localStorage.getItem("favoritos");
+  if (favoritosJSON) {
+    //limpio el arreglo de esta manera porque esta declarado como const
+    favoritos.length = 0;
+    const favoritosGuardados = JSON.parse(favoritosJSON);
+    favoritos.push(...favoritosGuardados);
+  }
+}
+
 //llamada a las funciones para crear dinámicamente las cards
 document.addEventListener("DOMContentLoaded", () => {
+  cargarFavoritos();
   generarCards();
   mostrarFavoritos();
+  console.log(favoritos);
 });
