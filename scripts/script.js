@@ -86,44 +86,102 @@ const cervezas = [
   },
 ];
 
+//función para crear una tarjeta de cerveza
+function crearCard(cerveza) {
+  //crear contenedor de la tarjeta
+  const item = document.createElement("div");
+  item.classList.add("item");
+
+  //crear la imagen
+  const img = document.createElement("img");
+  img.src = cerveza.img;
+  img.alt = `Imagen de una cerveza ${cerveza.nombre}`;
+  img.classList.add("img-cerveza");
+
+  //crear la descripcion
+  const descripcion = document.createElement("div");
+  descripcion.classList.add("descripcion");
+
+  //crear y ocultar descripcion
+  const details = document.createElement("details");
+  const summary = document.createElement("summary");
+  summary.textContent = "VER MÁS";
+  const p = document.createElement("p");
+  p.textContent = cerveza.descripcion;
+  details.appendChild(summary);
+  details.appendChild(p);
+
+  //crear boton de favoritos
+  const boton = document.createElement("button");
+  boton.classList.add("boton");
+  boton.innerHTML = "🤎";
+  boton.onclick = () => agregarAFavoritos(cerveza.id);
+
+  //agregar todo al item
+  descripcion.appendChild(details);
+  descripcion.appendChild(boton);
+  item.appendChild(img);
+  item.appendChild(descripcion);
+
+  return item;
+}
+
+//función para generar las cards de manera dinámica
 function generarCards() {
   const container = document.querySelector(".container");
 
   cervezas.forEach((cerveza) => {
-    //crear contenedor de la tarjeta
-    const item = document.createElement("div");
-    item.classList.add("item");
-    //crear la imagen
-    const img = document.createElement("img");
-    img.src = cerveza.img;
-    img.alt = `Imagen de una cerveza ${cerveza.nombre}`;
-    img.classList.add("img-cerveza");
-    //crear la descripcion
-    const descripcion = document.createElement("div");
-    descripcion.classList.add("descripcion");
-    //crear y ocultar descripcion
-    const details = document.createElement("details");
-    const summary = document.createElement("summary");
-    summary.textContent = "VER MÁS";
-    const p = document.createElement("p");
-    p.textContent = cerveza.descripcion;
-    details.appendChild(summary);
-    details.appendChild(p);
-    //crear boton de favoritos
-    const boton = document.createElement("button");
-    boton.classList.add("boton");
-    boton.innerHTML = "🤎";
-
-    //agregar todo al item
-    descripcion.appendChild(details);
-    descripcion.appendChild(boton);
-    item.appendChild(img);
-    item.appendChild(descripcion);
-
-    //agregar la tarjeta al container
-    container.appendChild(item);
+    const card = crearCard(cerveza);
+    container.appendChild(card);
   });
 }
 
-//llamada a la función para crear dinámicamente las cards
-document.addEventListener("DOMContentLoaded", generarCards);
+//cervezas favoritas
+const favoritos = [];
+
+//función para agregar y eliminar cervezas a favoritos
+function agregarAFavoritos(id) {
+  const cerveza = cervezas.find((cerveza) => cerveza.id === id);
+  if (!favoritos.includes(cerveza)) {
+    favoritos.push(cerveza);
+    console.log(`Cerveza ${cerveza.nombre} agregada a favoritos`);
+  } else {
+    const index = favoritos.indexOf(cerveza);
+    favoritos.splice(index, 1);
+    console.log(`Cerveza ${cerveza.nombre} eliminada de favoritos`);
+  }
+  console.log(favoritos);
+  //actualizar la sección de favoritos
+  mostrarFavoritos();
+}
+
+// Función para mostrar cervezas favoritas
+function mostrarFavoritos() {
+  //si hay cervezas favoritas, muestro el título, caso contrario no
+  if (favoritos.length > 0) {
+    document.getElementById("cervezas-favoritas").style.display = "block";
+  } else {
+    document.getElementById("cervezas-favoritas").style.display = "none";
+  }
+
+  const favoritosContainer = document.querySelector(".favoritas-container");
+  favoritosContainer.innerHTML = "";
+  favoritosContainer.classList.add("container");
+
+  // Crear un fragmento para mejorar el rendimiento
+  const fragmento = document.createDocumentFragment();
+
+  favoritos.forEach((cerveza) => {
+    const card = crearCard(cerveza);
+    //agrego las cervezas a fragmento en lugar de favoritosContainer
+    fragmento.appendChild(card);
+  });
+  //ahora sí agrego el fragmento a favoritosContainer
+  favoritosContainer.appendChild(fragmento);
+}
+
+//llamada a las funciones para crear dinámicamente las cards
+document.addEventListener("DOMContentLoaded", () => {
+  generarCards();
+  mostrarFavoritos();
+});
