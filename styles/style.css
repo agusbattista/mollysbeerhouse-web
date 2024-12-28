@@ -145,6 +145,10 @@ footer {
     "navbar developer redes-sociales";
 }
 
+#ubi-footer {
+  display: none;
+}
+
 .grid-logo {
   grid-area: logo;
 }
@@ -414,5 +418,8 @@ nav a:hover i {
       "horarios"
       "redes-sociales"
       "developer";
+  }
+  #ubi-footer {
+    display: block;
   }
 }
