@@ -25,6 +25,8 @@
             <ul>
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#nuestras-cervezas">NUESTRAS CERVEZAS</a></li>
+                <!-- li oculto si no hay fav -->
+                <li id="a-favoritas"><a href="#cervezas-favoritas">CERVEZAS FAVORITAS</a></li>
                 <li><a href="media/pdf/menu-digital.pdf" target="_blank">CARTA ONLINE</a></li>
                 <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeKn3tKf_c70fUGdNhm_5KPWafdZt7wcvM9i9Zglyz4U-vvpw/viewform"
                         target="_blank">TRABAJA
@@ -67,6 +69,14 @@
             </div>
         </section>
 
+        <section id="cervezas-favoritas">
+            <!-- Sección oculta por defecto si no hay cervezas favoritas -->
+            <h2>CERVEZAS FAVORITAS</h2>
+            <div class="favoritas-container">
+                <!-- Las cards son generadas mediante JavaScript -->
+            </div>
+        </section>
+
         <section id="contacto">
             <h2>CONTACTO</h2>
             <form id="formulario" action="https://formspree.io/f/xrbgpqqb" method="POST">
@@ -101,18 +111,20 @@
             <nav>
                 <ul>
                     <li><a href="#nuestras-cervezas">NUESTRAS CERVEZAS</a></li>
+                    <!-- li oculto si no hay fav -->
+                    <li id="a-footer-favoritas"><a href="#cervezas-favoritas">CERVEZAS FAVORITAS</a></li>
                     <li><a href="media/pdf/menu-digital.pdf" target="_blank">CARTA ONLINE</a></li>
                     <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeKn3tKf_c70fUGdNhm_5KPWafdZt7wcvM9i9Zglyz4U-vvpw/viewform"
                             target="_blank">TRABAJA
                             CON NOSOTROS</a></li>
-                    <li><a href="#ubicacion">UBICACIÓN</a></li>
+                    <li id="ubi-footer"><a href="#ubicacion">UBICACIÓN</a></li>
                     <li><a href="#contacto">CONTACTO</a></li>
                 </ul>
             </nav>
         </section>
 
         <section id="footerlogo" class="grid-logo">
-            <img src="media/img/footer-logo.avif" alt="Logo de Molly's Beer House">
+            <a href="#home"><img src="media/img/footer-logo.avif" alt="Logo de Molly's Beer House"></a>
 
         </section>
 
