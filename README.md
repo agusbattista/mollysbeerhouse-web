@@ -16,4 +16,6 @@
 
 - La página web será de software libre bajo la licencia GNU GPL v3.0.
 
+- La sección de cervezas y favoritos se manejará de manera dinámica mediante JavaScript.
+
 #### (Sitio en construcción)
