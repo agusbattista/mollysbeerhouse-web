@@ -259,6 +259,15 @@ nav a:hover i {
   cursor: pointer;
 }
 
+/* boton activo es para cuando una cerveza está en favoritos */
+.boton.activo {
+  background-color: red;
+}
+
+.boton:hover.activo {
+  background-color: #f67c4fb8;
+}
+
 #nuestras-cervezas {
   background-image: url("../media/img/fondo-menu-negro.png");
   padding-top: 2em;

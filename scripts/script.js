@@ -114,8 +114,14 @@ function crearCard(cerveza) {
   //crear boton de favoritos
   const boton = document.createElement("button");
   boton.classList.add("boton");
+  boton.id = `boton-${cerveza.id}`;
   boton.innerHTML = "🤎";
   boton.onclick = () => agregarAFavoritos(cerveza.id);
+
+  // Verificar si la cerveza ya está en favoritos y agregar la clase "activo" si así es
+  if (favoritos.includes(cerveza)) {
+    boton.classList.add("activo");
+  }
 
   //agregar todo al item
   descripcion.appendChild(details);
@@ -142,13 +148,16 @@ const favoritos = [];
 //función para agregar y eliminar cervezas a favoritos
 function agregarAFavoritos(id) {
   const cerveza = cervezas.find((cerveza) => cerveza.id === id);
+  const boton = document.querySelector(`#boton-${id}`);
   if (!favoritos.includes(cerveza)) {
     favoritos.push(cerveza);
     console.log(`Cerveza ${cerveza.nombre} agregada a favoritos`);
+    boton.classList.add("activo");
   } else {
     const index = favoritos.indexOf(cerveza);
     favoritos.splice(index, 1);
     console.log(`Cerveza ${cerveza.nombre} eliminada de favoritos`);
+    boton.classList.remove("activo");
   }
   console.log(favoritos);
   //actualizar la sección de favoritos
