@@ -276,7 +276,7 @@ nav a:hover i {
 
 /* boton activo es para cuando una cerveza está en favoritos */
 .boton.activo {
-  background-color: red;
+  background: rgba(176, 126, 103, 0.8);
 }
 
 #nuestras-cervezas {
