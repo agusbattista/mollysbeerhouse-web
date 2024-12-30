@@ -18,4 +18,6 @@
 
 - La sección de cervezas y favoritos se manejará de manera dinámica mediante JavaScript.
 
+- Implementará un menú hamburguesa para pantallas pequeñas mediante CSS y JS.
+
 #### (Sitio en construcción)
