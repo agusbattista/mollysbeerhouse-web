@@ -220,4 +220,37 @@ document.addEventListener("DOMContentLoaded", () => {
   generarCards();
   mostrarFavoritos();
   console.log(favoritos);
+  //inicialización menu hamburguesa
+  nav.classList.remove("nav-visible"); // Asegúrate de que el menú esté cerrado al inicio
+  header.classList.add("header-cerrado");
+  abrir.style.display = "block";
+  cerrar.style.display = "none";
+});
+
+//menu hamburguesa
+const nav = document.querySelector("#nav");
+const abrir = document.querySelector("#abrir");
+const cerrar = document.querySelector("#cerrar");
+const header = document.querySelector("header");
+
+function cerrarHeader() {
+  nav.classList.remove("nav-visible");
+  header.classList.add("header-cerrado");
+  abrir.style.display = "block";
+  cerrar.style.display = "none";
+}
+
+abrir.addEventListener("click", () => {
+  nav.classList.add("nav-visible");
+  header.classList.remove("header-cerrado");
+  abrir.style.display = "none";
+  cerrar.style.display = "block";
+});
+
+cerrar.addEventListener("click", () => {
+  cerrarHeader();
+});
+
+nav.addEventListener("click", () => {
+  cerrarHeader();
 });
