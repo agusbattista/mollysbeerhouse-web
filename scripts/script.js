@@ -254,3 +254,71 @@ cerrar.addEventListener("click", () => {
 nav.addEventListener("click", () => {
   cerrarHeader();
 });
+
+//alertas de SweetAlert2 personalizadas
+const COLOR_BOTONES_ALERT = "#f67c4f"; // Naranja de Molly's
+const COLOR_BACKGROUND_ALERT = "#1d1d1b"; // Body de Molly's
+const COLOR_TEXTO_ALERT = "#ffffff"; // Texto de Molly's
+
+function alertCargando() {
+  Swal.fire({
+    title: "Enviando mensaje...",
+    text: "Por favor espera un momento",
+    allowOutsideClick: false,
+    background: COLOR_BACKGROUND_ALERT,
+    color: COLOR_TEXTO_ALERT,
+    didOpen: () => {
+      Swal.showLoading();
+    },
+  });
+}
+
+function alertExito(
+  titulo = "¡Éxito!",
+  mensaje = "Mensaje enviado correctamente"
+) {
+  Swal.fire({
+    icon: "success",
+    title: titulo,
+    text: mensaje,
+    confirmButtonColor: COLOR_BOTONES_ALERT,
+    background: COLOR_BACKGROUND_ALERT,
+    color: COLOR_TEXTO_ALERT,
+  });
+}
+
+function alertError(mensaje = "Hubo un problema al enviar el mensaje") {
+  Swal.fire({
+    icon: "error",
+    title: "Error",
+    text: mensaje,
+    confirmButtonColor: COLOR_BOTONES_ALERT,
+    background: COLOR_BACKGROUND_ALERT,
+    color: COLOR_TEXTO_ALERT,
+  });
+}
+
+//Resetea el formulario luego de enviarlo. Envía alertas al usuario para informar el proceso y el resultado.
+document.getElementById("formulario").addEventListener("submit", function (e) {
+  e.preventDefault();
+  alertCargando();
+  fetch(this.action, {
+    method: this.method,
+    body: new FormData(this),
+    headers: {
+      Accept: "application/json",
+    },
+  })
+    .then((response) => {
+      if (response.ok) {
+        this.reset();
+        alertExito();
+      } else {
+        alertError();
+      }
+    })
+    .catch((error) => {
+      console.log(error.message);
+      alertError();
+    });
+});

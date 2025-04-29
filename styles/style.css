@@ -367,6 +367,18 @@ nav a:hover i {
   height: auto;
 }
 
+/* sweet alert */
+.swal2-popup {
+  border-radius: 15px !important;
+  max-width: 80% !important;
+}
+
+.swal2-confirm {
+  border-radius: 10px !important;
+  padding: 10px 25px !important;
+  font-family: "Roboto", sans-serif !important;
+}
+
 /* MEDIA QUERIE (para cuando el ancho del dispositivo es pequeño) */
 @media (max-width: 768px) {
   /* header */
