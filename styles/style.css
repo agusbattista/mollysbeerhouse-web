@@ -379,6 +379,11 @@ nav a:hover i {
   font-family: "Roboto", sans-serif !important;
 }
 
+.swal2-html-container {
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 400 !important;
+}
+
 /* MEDIA QUERIE (para cuando el ancho del dispositivo es pequeño) */
 @media (max-width: 768px) {
   /* header */
