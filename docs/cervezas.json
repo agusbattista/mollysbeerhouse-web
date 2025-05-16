@@ -1,0 +1,86 @@
+[
+    {
+      "id": 0,
+      "nombre": "Ogham Honey",
+      "img": "media/img/ogham-honey.png",
+      "descripcion":
+        "CERVEZA DORADA. BASE DE MIEL, CON NOTAS DULCES Y FLORALES. RETROGUSTO DULCE Y AGRADABLE."
+    },
+    {
+      "id": 1,
+      "nombre": "Ogham Red Ale",
+      "img": "media/img/ogham-red-ale.png",
+      "descripcion":
+        "CERVEZA ALE COLOR RUBÍ. CON 6 TIPOS DE MALTAS. AMARGOR MODERADAMENTE BAJO Y BIEN BALANCEADA."
+    },
+    {
+      "id": 2,
+      "nombre": "Ogham IPA",
+      "img": "media/img/ogham-ipa.png",
+      "descripcion":
+        "CERVEZA ÁMBAR. INTENSA, FLORAL Y FRUTAL. AMARGOR BALANCEADO CON EL DULZOR APORTADO POR LAS MALTAS. SABROSA Y COMPLEJA."
+    },
+    {
+      "id": 3,
+      "nombre": "Ogham Porter",
+      "img": "media/img/ogham-porter.png",
+      "descripcion":
+        "CERVEZA DE ORIGEN INGLÉS, DE BUEN CUERPO. CARÁCTER INTENSO DE CHOCOLATE, CAFÉ Y NUEZ."
+    },
+    {
+      "id": 4,
+      "nombre": "Ogham AAA",
+      "img": "media/img/ogham-aaa.png",
+      "descripcion":
+        "AROMAS EQUILIBRADOS ENTRE LUPULOS AMERICANOS Y MALTAS EUROPEAS. SOPORTE DE MALTAS CARAMELO. BUENA TOMABILIDAD."
+    },
+    {
+      "id": 5,
+      "nombre": "Ogham APA",
+      "img": "media/img/ogham-apa.png",
+      "descripcion":
+        "CERVEZA DORADA A ROJIZA. SUAVE, FRESCA Y FRUTAL. AROMA A LÚPULO Y UN FINAL AGRADABLE. BUENA TOMABILIDAD."
+    },
+    {
+      "id": 6,
+      "nombre": "Buller IPA",
+      "img": "media/img/buller-ipa.png",
+      "descripcion":
+        "ESTILO INGLÉS, COLOR COBRIZO INTENSO. RETROGUSTO PERSISTENTE REDONDEADO POR DEJOS TERROSOS Y ALGO CARAMELOSOS."
+    },
+    {
+      "id": 7,
+      "nombre": "Buller Pilsen",
+      "img": "media/img/buller-pilsen.png",
+      "descripcion":
+        "CERVEZA RUBIA CRISTALINA. SABORES FLORALES. SUTIL, ELEGANTE Y DE ALTA TOMABILIDAD."
+    },
+    {
+      "id": 8,
+      "nombre": "Minga Honey",
+      "img": "media/img/minga-honey.png",
+      "descripcion":
+        "CERVEZA DORADA CON SUTILES NOTAS DE MIEL. DULZURA MODERADA Y CUERPO LIGERO. ALTA TOMABILIDAD."
+    },
+    {
+      "id": 9,
+      "nombre": "La Paloma Bock",
+      "img": "media/img/la-paloma-bock.png",
+      "descripcion":
+        "CERVEZA DE ALTO CUERPO ALTO. MUY MALTOSA CON NOTAS DE CORTEZA DE PAN. FINAL SECO, CORTO. MEDIANA TOMABILIDAD."
+    },
+    {
+      "id": 10,
+      "nombre": "La Paloma IPA-01",
+      "img": "media/img/la-paloma-ipa-01.png",
+      "descripcion":
+        "CERVEZA COLOR DORADO INTENSO. BLEND DE LÚPULOS AMERICANOS FRUTALES Y RESINOSOS."
+    },
+    {
+      "id": 11,
+      "nombre": "La Paloma IPA-02",
+      "img": "media/img/la-paloma-ipa-02.png",
+      "descripcion":
+        "CERVEZA COLOR ÁMBAR. BLEND DE LÚPULOS AMERICANOS CÍTRICOS, FRUTALES Y ESPECIADOS."
+    }
+  ]
