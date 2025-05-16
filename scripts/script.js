@@ -2,7 +2,7 @@
 const cervezas = [];
 
 //fetch para cargar el archivo JSON y guardarlo en el arreglo cervezas
-fetch("https://agusbattista.github.io/mollysbeerhouse-web/cervezas.json")
+fetch("https://agusbattista.github.io/mollysbeerhouse-web/docs/cervezas.json")
   .then((response) => response.json())
   .then((data) => {
     cervezas.push(...data);
@@ -145,7 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
   cargarFavoritos();
   //generarCards();
   mostrarFavoritos();
-  console.log(favoritos);
   //inicialización menu hamburguesa
   nav.classList.remove("nav-visible"); // Asegúrate de que el menú esté cerrado al inicio
   header.classList.add("header-cerrado");
@@ -185,49 +184,17 @@ nav.addEventListener("click", () => {
 const COLOR_BOTONES_ALERT = "#f67c4f"; // Naranja de Molly's
 const COLOR_BACKGROUND_ALERT = "#1d1d1b"; // Body de Molly's
 const COLOR_TEXTO_ALERT = "#ffffff"; // Texto de Molly's
-
-function alertCargando() {
-  Swal.fire({
-    title: "Enviando mensaje...",
-    text: "Por favor espera un momento",
-    allowOutsideClick: false,
-    background: COLOR_BACKGROUND_ALERT,
-    color: COLOR_TEXTO_ALERT,
-    didOpen: () => {
-      Swal.showLoading();
-    },
-  });
-}
-
-function alertExito(
-  titulo = "¡Éxito!",
-  mensaje = "Mensaje enviado correctamente"
-) {
-  Swal.fire({
-    icon: "success",
-    title: titulo,
-    text: mensaje,
-    confirmButtonColor: COLOR_BOTONES_ALERT,
-    background: COLOR_BACKGROUND_ALERT,
-    color: COLOR_TEXTO_ALERT,
-  });
-}
-
-function alertError(mensaje = "Hubo un problema al enviar el mensaje") {
-  Swal.fire({
-    icon: "error",
-    title: "Error",
-    text: mensaje,
-    confirmButtonColor: COLOR_BOTONES_ALERT,
-    background: COLOR_BACKGROUND_ALERT,
-    color: COLOR_TEXTO_ALERT,
-  });
-}
+import Alerta from "./Alerta.js";
+const alerta = new Alerta(
+  COLOR_BOTONES_ALERT,
+  COLOR_BACKGROUND_ALERT,
+  COLOR_TEXTO_ALERT
+);
 
 //Resetea el formulario luego de enviarlo. Envía alertas al usuario para informar el proceso y el resultado.
 document.getElementById("formulario").addEventListener("submit", function (e) {
   e.preventDefault();
-  alertCargando();
+  alerta.alertCargando();
   fetch(this.action, {
     method: this.method,
     body: new FormData(this),
@@ -238,13 +205,13 @@ document.getElementById("formulario").addEventListener("submit", function (e) {
     .then((response) => {
       if (response.ok) {
         this.reset();
-        alertExito();
+        alerta.alertExito();
       } else {
-        alertError();
+        alerta.alertError();
       }
     })
     .catch((error) => {
       console.log(error.message);
-      alertError();
+      alerta.alertError();
     });
 });
