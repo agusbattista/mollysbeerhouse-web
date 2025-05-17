@@ -53,7 +53,7 @@ class Card {
     boton.classList.add("boton");
     boton.id = `boton-${cerveza.id}`;
     boton.innerHTML = "🤎";
-    boton.onclick = () => this.#favoritos.agregarAFavoritos(cerveza.id);
+    boton.onclick = () => this.#favoritos.agregarAFavoritos(cerveza);
     if (this.#favoritos.estaEnFavoritos(cerveza)) {
       boton.classList.add("activo");
     }
