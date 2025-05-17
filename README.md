@@ -8,15 +8,15 @@
 
 - El uso de CSS busca estetizar la página de manera tal de diferenciar las partes del sitio (contenido, header, footer, etc.) de manera prolija y agradable. Utiliza para ello flexbox, grid y media queries.
 
+- Implementa un menú hamburguesa para pantallas pequeñas mediante CSS y JS.
+
 - La sección de contacto utiliza Formspree para poder redirigir lo ingresado a una cuenta de email. Además, las alertas que corresponden al mismo son estilizadas con sweetalert2.
+
+- La sección de cervezas y favoritos se maneja de manera dinámica mediante JavaScript (vanilla). Las cervezas se obtienen de un JSON estático servido publicamente, se utiliza LocalStorage para persistir los favoritos de manera local, se utiliza async/await y Promise para el manejo de operaciones asíncronas y Programación Orientada a Objetos para facilitar el reuso de código y su mantenimiento.
 
 - El deploy del sitio se hizo en GitHub Pages.
 
 - La página web es de software libre bajo la licencia GNU GPL v3.0.
-
-- La sección de cervezas y favoritos se maneja de manera dinámica mediante JavaScript (vanilla).
-
-- Implementa un menú hamburguesa para pantallas pequeñas mediante CSS y JS.
 
 > [!IMPORTANT]
 > El sitio está hecho con el fin de demostrar mis habilidades en HTML, CSS y JavaScript.
