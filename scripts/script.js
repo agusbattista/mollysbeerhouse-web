@@ -1,5 +1,57 @@
-//objeto con las cervezas que van a aparecer en las cards de manera dinámica
+import Card from "./Card.js";
+import Alerta from "./Alerta.js";
+import Favoritos from "./Favoritos.js";
+
 const cervezas = [];
+
+const COLOR_BOTONES_ALERT = "#f67c4f"; // Naranja de Molly's
+const COLOR_BACKGROUND_ALERT = "#1d1d1b"; // Body de Molly's
+const COLOR_TEXTO_ALERT = "#ffffff"; // Texto de Molly's
+
+//menu hamburguesa
+const nav = document.querySelector("#nav");
+const abrir = document.querySelector("#abrir");
+const cerrar = document.querySelector("#cerrar");
+const header = document.querySelector("header");
+
+const favManager = new Favoritos(cervezas);
+const cardManager = new Card(favManager);
+favManager.setCardManager(cardManager);
+
+const alerta = new Alerta(
+  COLOR_BOTONES_ALERT,
+  COLOR_BACKGROUND_ALERT,
+  COLOR_TEXTO_ALERT
+);
+
+//función para generar las cards de manera dinámica
+function generarCards() {
+  const container = document.querySelector(".container");
+  container.innerHTML = ""; // Limpiar el contenedor antes de agregar nuevas cards
+  cervezas.forEach((cerveza) => {
+    const card = cardManager.crearCard(cerveza);
+    container.appendChild(card);
+  });
+}
+
+function cerrarHeader() {
+  nav.classList.remove("nav-visible");
+  header.classList.add("header-cerrado");
+  abrir.style.display = "block";
+  cerrar.style.display = "none";
+}
+
+//llamada a las funciones para crear dinámicamente las cards
+document.addEventListener("DOMContentLoaded", () => {
+  favManager.cargarFavoritos();
+  //generarCards();
+  favManager.mostrarFavoritos();
+  //inicialización menu hamburguesa
+  nav.classList.remove("nav-visible"); // Asegúrate de que el menú esté cerrado al inicio
+  header.classList.add("header-cerrado");
+  abrir.style.display = "block";
+  cerrar.style.display = "none";
+});
 
 //fetch para cargar el archivo JSON y guardarlo en el arreglo cervezas
 fetch("https://agusbattista.github.io/mollysbeerhouse-web/docs/cervezas.json")
@@ -11,159 +63,6 @@ fetch("https://agusbattista.github.io/mollysbeerhouse-web/docs/cervezas.json")
   .catch((error) => {
     console.error("Error al cargar el archivo JSON:", error);
   });
-
-//función para crear una tarjeta de cerveza
-function crearCard(cerveza) {
-  //crear contenedor de la tarjeta
-  const item = document.createElement("div");
-  item.classList.add("item");
-
-  //crear la imagen
-  const img = document.createElement("img");
-  img.src = cerveza.img;
-  img.alt = `Imagen de una cerveza ${cerveza.nombre}`;
-  img.classList.add("img-cerveza");
-
-  //crear la descripcion
-  const descripcion = document.createElement("div");
-  descripcion.classList.add("descripcion");
-
-  //crear y ocultar descripcion
-  const details = document.createElement("details");
-  const summary = document.createElement("summary");
-  summary.textContent = "VER MÁS";
-  const p = document.createElement("p");
-  p.textContent = cerveza.descripcion;
-  details.appendChild(summary);
-  details.appendChild(p);
-
-  //crear boton de favoritos
-  const boton = document.createElement("button");
-  boton.classList.add("boton");
-  boton.id = `boton-${cerveza.id}`;
-  boton.innerHTML = "🤎";
-  boton.onclick = () => agregarAFavoritos(cerveza.id);
-
-  // Verificar si la cerveza ya está en favoritos y agregar la clase "activo" si así es
-  if (favoritos.some((fav) => fav.id === cerveza.id)) {
-    boton.classList.add("activo");
-  }
-
-  //agregar todo al item
-  descripcion.appendChild(details);
-  descripcion.appendChild(boton);
-  item.appendChild(img);
-  item.appendChild(descripcion);
-
-  return item;
-}
-
-//función para generar las cards de manera dinámica
-function generarCards() {
-  const container = document.querySelector(".container");
-
-  cervezas.forEach((cerveza) => {
-    const card = crearCard(cerveza);
-    container.appendChild(card);
-  });
-}
-
-//cervezas favoritas
-const favoritos = [];
-
-//función para agregar y eliminar cervezas a favoritos
-function agregarAFavoritos(id) {
-  const existeFavorito = favoritos.find((fav) => fav.id === id);
-  const cervezaEncontrada = cervezas.find((cerveza) => cerveza.id === id);
-  const boton = document.querySelector(`#boton-${id}`);
-
-  if (!existeFavorito) {
-    favoritos.push(cervezaEncontrada);
-    console.log(`Cerveza ${cervezaEncontrada.nombre} agregada a favoritos`);
-    boton.classList.add("activo");
-  } else {
-    const index = favoritos.indexOf(existeFavorito);
-    favoritos.splice(index, 1);
-    console.log(`Cerveza ${existeFavorito.nombre} eliminada de favoritos`);
-    boton.classList.remove("activo");
-  }
-  // Guardar los cambios en el localStorage
-  guardarFavoritos();
-  console.log(favoritos);
-  //actualizar la sección de favoritos
-  mostrarFavoritos();
-}
-
-// Función para mostrar cervezas favoritas
-function mostrarFavoritos() {
-  //si hay cervezas favoritas, muestro el título, caso contrario no
-  if (favoritos.length > 0) {
-    document.getElementById("cervezas-favoritas").style.display = "block";
-    document.getElementById("a-favoritas").style.display = "block";
-    document.getElementById("a-footer-favoritas").style.display = "block";
-  } else {
-    document.getElementById("cervezas-favoritas").style.display = "none";
-    document.getElementById("a-favoritas").style.display = "none";
-    document.getElementById("a-footer-favoritas").style.display = "none";
-  }
-
-  const favoritosContainer = document.querySelector(".favoritas-container");
-  favoritosContainer.innerHTML = "";
-  favoritosContainer.classList.add("container");
-
-  // Crear un fragmento para mejorar el rendimiento
-  const fragmento = document.createDocumentFragment();
-
-  favoritos.forEach((cerveza) => {
-    const card = crearCard(cerveza);
-    //agrego las cervezas a fragmento en lugar de favoritosContainer
-    fragmento.appendChild(card);
-  });
-  //ahora sí agrego el fragmento a favoritosContainer
-  favoritosContainer.appendChild(fragmento);
-}
-
-// Función para guardar favoritos en el localStorage
-function guardarFavoritos() {
-  const favoritosJSON = JSON.stringify(favoritos);
-  localStorage.setItem("favoritos", favoritosJSON);
-}
-
-// Función para cargar favoritos desde el localStorage
-function cargarFavoritos() {
-  const favoritosJSON = localStorage.getItem("favoritos");
-  if (favoritosJSON) {
-    //limpio el arreglo de esta manera porque esta declarado como const
-    favoritos.length = 0;
-    const favoritosGuardados = JSON.parse(favoritosJSON);
-    favoritos.push(...favoritosGuardados);
-  }
-}
-
-//llamada a las funciones para crear dinámicamente las cards
-document.addEventListener("DOMContentLoaded", () => {
-  cargarFavoritos();
-  //generarCards();
-  mostrarFavoritos();
-  //inicialización menu hamburguesa
-  nav.classList.remove("nav-visible"); // Asegúrate de que el menú esté cerrado al inicio
-  header.classList.add("header-cerrado");
-  abrir.style.display = "block";
-  cerrar.style.display = "none";
-});
-
-//menu hamburguesa
-const nav = document.querySelector("#nav");
-const abrir = document.querySelector("#abrir");
-const cerrar = document.querySelector("#cerrar");
-const header = document.querySelector("header");
-
-function cerrarHeader() {
-  nav.classList.remove("nav-visible");
-  header.classList.add("header-cerrado");
-  abrir.style.display = "block";
-  cerrar.style.display = "none";
-}
 
 abrir.addEventListener("click", () => {
   nav.classList.add("nav-visible");
@@ -181,15 +80,6 @@ nav.addEventListener("click", () => {
 });
 
 //alertas de SweetAlert2 personalizadas
-const COLOR_BOTONES_ALERT = "#f67c4f"; // Naranja de Molly's
-const COLOR_BACKGROUND_ALERT = "#1d1d1b"; // Body de Molly's
-const COLOR_TEXTO_ALERT = "#ffffff"; // Texto de Molly's
-import Alerta from "./Alerta.js";
-const alerta = new Alerta(
-  COLOR_BOTONES_ALERT,
-  COLOR_BACKGROUND_ALERT,
-  COLOR_TEXTO_ALERT
-);
 
 //Resetea el formulario luego de enviarlo. Envía alertas al usuario para informar el proceso y el resultado.
 document.getElementById("formulario").addEventListener("submit", function (e) {

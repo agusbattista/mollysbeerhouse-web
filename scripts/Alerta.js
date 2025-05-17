@@ -1,8 +1,12 @@
 class Alerta {
+  #colorBotones;
+  #colorFondo;
+  #colorTexto;
+
   constructor(colorBotones, colorFondo, colorTexto) {
-    this.colorBotones = colorBotones;
-    this.colorFondo = colorFondo;
-    this.colorTexto = colorTexto;
+    this.#colorBotones = colorBotones;
+    this.#colorFondo = colorFondo;
+    this.#colorTexto = colorTexto;
   }
 
   alertCargando = () => {
@@ -10,8 +14,8 @@ class Alerta {
       title: "Enviando mensaje...",
       text: "Por favor espera un momento",
       allowOutsideClick: false,
-      background: this.colorFondo,
-      color: this.colorTexto,
+      background: this.#colorFondo,
+      color: this.#colorTexto,
       didOpen: () => {
         Swal.showLoading();
       },
@@ -26,9 +30,9 @@ class Alerta {
       icon: "success",
       title: titulo,
       text: mensaje,
-      confirmButtonColor: this.colorBotones,
-      background: this.colorFondo,
-      color: this.colorTexto,
+      confirmButtonColor: this.#colorBotones,
+      background: this.#colorFondo,
+      color: this.#colorTexto,
     });
   };
 
@@ -37,9 +41,9 @@ class Alerta {
       icon: "error",
       title: "Error",
       text: mensaje,
-      confirmButtonColor: this.colorBotones,
-      background: this.colorFondo,
-      color: this.colorTexto,
+      confirmButtonColor: this.#colorBotones,
+      background: this.#colorFondo,
+      color: this.#colorTexto,
     });
   };
 }
