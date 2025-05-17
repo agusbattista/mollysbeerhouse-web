@@ -18,7 +18,7 @@ class MenuHamburguesa {
   };
 
   inicializar = () => {
-    this.#nav.classList.remove("nav-visible"); // Asegúrate de que el menú esté cerrado al inicio
+    this.#nav.classList.remove("nav-visible");
     this.#header.classList.add("header-cerrado");
     this.#abrir.style.display = "block";
     this.#cerrar.style.display = "none";

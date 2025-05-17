@@ -8,6 +8,7 @@ class Favoritos {
   constructor() {
     this.#items = [];
     this.#favoritosContainer = new Container(".favoritas-container");
+    this.#favoritosContainer.agregarClase("container");
     this.cargarFavoritos();
   }
 
@@ -26,19 +27,29 @@ class Favoritos {
     localStorage.setItem("favoritos", JSON.stringify(this.#items));
   };
 
+  #buscarPosicionDeCerveza = (cerveza) => {
+    return this.#items.findIndex((item) => item.id === cerveza.id);
+  };
+
+  #agregarUnaCerveza = (cerveza) => {
+    this.#items.push(cerveza);
+  };
+
+  #eliminarUnaCerveza = (cerveza) => {
+    const index = this.#buscarPosicionDeCerveza(cerveza);
+    this.#items.splice(index, 1);
+  };
+
   agregarAFavoritos = (cerveza) => {
     const existeFavorito = this.estaEnFavoritos(cerveza);
     const boton = document.querySelector(`#boton-${cerveza.id}`);
 
     if (!existeFavorito) {
-      this.#items.push(cerveza);
+      this.#agregarUnaCerveza(cerveza);
       boton.classList.add("activo");
     } else {
-      const index = this.#items.findIndex((item) => item.id === cerveza.id);
-      if (index !== -1) {
-        this.#items.splice(index, 1);
-        boton.classList.remove("activo");
-      }
+      this.#eliminarUnaCerveza(cerveza);
+      boton.classList.remove("activo");
     }
 
     this.guardarFavoritos();
@@ -49,17 +60,23 @@ class Favoritos {
     return this.#items.some((item) => item.id === cerveza.id);
   };
 
+  #mostrarFav = () => {
+    document.getElementById("cervezas-favoritas").style.display = "block";
+    document.getElementById("a-favoritas").style.display = "block";
+    document.getElementById("a-footer-favoritas").style.display = "block";
+  };
+  #ocultarFav = () => {
+    document.getElementById("cervezas-favoritas").style.display = "none";
+    document.getElementById("a-favoritas").style.display = "none";
+    document.getElementById("a-footer-favoritas").style.display = "none";
+  };
+
   mostrarFavoritos = () => {
     if (this.#items.length > 0) {
-      document.getElementById("cervezas-favoritas").style.display = "block";
-      document.getElementById("a-favoritas").style.display = "block";
-      document.getElementById("a-footer-favoritas").style.display = "block";
+      this.#mostrarFav();
     } else {
-      document.getElementById("cervezas-favoritas").style.display = "none";
-      document.getElementById("a-favoritas").style.display = "none";
-      document.getElementById("a-footer-favoritas").style.display = "none";
+      this.#ocultarFav();
     }
-    this.#favoritosContainer.agregarClase("container");
     this.#favoritosContainer.generarCards(this.#items, this.#cardManager);
   };
 }
