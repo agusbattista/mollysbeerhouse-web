@@ -34,9 +34,11 @@ class Favoritos {
       this.#items.push(cerveza);
       boton.classList.add("activo");
     } else {
-      const index = this.#items.indexOf(existeFavorito);
-      this.#items.splice(index, 1);
-      boton.classList.remove("activo");
+      const index = this.#items.findIndex((item) => item.id === cerveza.id);
+      if (index !== -1) {
+        this.#items.splice(index, 1);
+        boton.classList.remove("activo");
+      }
     }
 
     this.guardarFavoritos();

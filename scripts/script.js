@@ -8,7 +8,7 @@ import Formulario from "./Formulario.js";
 import DataService from "./DataService.js";
 
 const dataService = new DataService(
-  "https://agusbattista.github.io/mollysbeerhouse-web/docs/cervezas.json"
+  "https://agusbattista.github.io/mollysbeerhouse-web/data/cervezas.json"
 );
 const alerta = new Alerta(
   CONFIG.COLORES.BOTONES_ALERT,
