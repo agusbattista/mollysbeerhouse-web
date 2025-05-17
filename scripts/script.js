@@ -1,8 +1,8 @@
+import { CONFIG } from "./config.js";
 import Card from "./Card.js";
 import Alerta from "./Alerta.js";
 import Favoritos from "./Favoritos.js";
 import MenuHamburguesa from "./MenuHamburguesa.js";
-import { CONFIG } from "./config.js";
 import Container from "./Container.js";
 import Formulario from "./Formulario.js";
 import DataService from "./DataService.js";

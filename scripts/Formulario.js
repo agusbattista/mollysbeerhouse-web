@@ -1,41 +1,46 @@
 class Formulario {
-  #id;
+  #formulario;
   #alerta;
 
   constructor(alerta) {
-    this.#id = document.getElementById("formulario");
+    this.#formulario = document.getElementById("formulario");
     this.#alerta = alerta;
     this.#configurarEventos();
   }
 
   #configurarEventos = () => {
-    this.#id.addEventListener("submit", (evento) =>
-      this.#manejarSubmit(evento)
-    );
+    this.#formulario.addEventListener("submit", (evento) => {
+      evento.preventDefault();
+      this.#validarYEnviarFormulario();
+    });
   };
 
-  #manejarSubmit = (evento) => {
-    evento.preventDefault();
-    this.#alerta.alertCargando();
-    fetch(this.#id.action, {
-      method: this.#id.method,
-      body: new FormData(this.#id),
-      headers: {
-        Accept: "application/json",
-      },
-    })
-      .then((response) => {
-        if (response.ok) {
-          this.#id.reset();
-          this.#alerta.alertExito();
-        } else {
-          this.#alerta.alertError();
-        }
+  #validarYEnviarFormulario = () => {
+    if (this.#formulario.checkValidity()) {
+      this.#alerta.alertCargando();
+      fetch(this.#formulario.action, {
+        method: this.#formulario.method,
+        body: new FormData(this.#formulario),
+        headers: {
+          Accept: "application/json",
+        },
       })
-      .catch((error) => {
-        console.log(error.message);
-        this.#alerta.alertError();
-      });
+        .then((response) => {
+          if (response.ok) {
+            this.#formulario.reset();
+            this.#alerta.alertExito();
+          } else {
+            this.#alerta.alertError();
+          }
+        })
+        .catch((error) => {
+          console.log(error.message);
+          this.#alerta.alertError();
+        });
+    } else {
+      this.#formulario.reportValidity();
+    }
   };
 }
+
 export default Formulario;

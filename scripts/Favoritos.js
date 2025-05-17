@@ -40,10 +40,13 @@ class Favoritos {
     this.#items.splice(index, 1);
   };
 
+  estaEnFavoritos = (cerveza) => {
+    return this.#items.some((item) => item.id === cerveza.id);
+  };
+
   agregarAFavoritos = (cerveza) => {
     const existeFavorito = this.estaEnFavoritos(cerveza);
     const boton = document.querySelector(`#boton-${cerveza.id}`);
-
     if (!existeFavorito) {
       this.#agregarUnaCerveza(cerveza);
       boton.classList.add("activo");
@@ -51,13 +54,8 @@ class Favoritos {
       this.#eliminarUnaCerveza(cerveza);
       boton.classList.remove("activo");
     }
-
     this.guardarFavoritos();
     this.mostrarFavoritos();
-  };
-
-  estaEnFavoritos = (cerveza) => {
-    return this.#items.some((item) => item.id === cerveza.id);
   };
 
   #mostrarFav = () => {

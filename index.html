@@ -85,7 +85,9 @@
                 <label for="nombre">Nombre</label>
                 <input type="text" name="nombre" id="nombre" maxlength="50" placeholder="Juan Pérez" required />
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" maxlength="100" placeholder="juanperez@gmail.com" required>
+                <input type="email" name="email" id="email" maxlength="100" placeholder="juanperez@gmail.com"
+                    pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}"
+                    required>
                 <label for="comentarios">Comentarios</label>
                 <textarea name="comentarios" id="comentarios" maxlength="5000"
                     placeholder="Escribí acá tus comentarios y sugerencias..." required></textarea>
@@ -127,7 +129,6 @@
 
         <section id="footerlogo" class="grid-logo">
             <a href="#home"><img src="media/img/footer-logo.avif" alt="Logo de Molly's Beer House"></a>
-
         </section>
 
         <section id="developer" class="grid-developer">
