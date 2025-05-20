@@ -1,0 +1,29 @@
+{
+  "name": "mollysbeerhouse-web",
+  "version": "1.0.0",
+  "description": "- Esta web está destinada a la promoción de una cervecería de la ciudad de La Plata. En ella encontraremos las cervezas que se sirven en el bar, las comidas disponibles, una sección de contacto, enlaces a sus redes sociales y un mapa con la dirección del lugar entre otras cosas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agusbattista/mollysbeerhouse-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/agusbattista/mollysbeerhouse-web/issues"
+  },
+  "homepage": "https://github.com/agusbattista/mollysbeerhouse-web#readme",
+  "devDependencies": {
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}
