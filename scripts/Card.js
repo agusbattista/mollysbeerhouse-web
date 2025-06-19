@@ -7,7 +7,7 @@ class Card {
   crearCard = (cerveza) => {
     const item = this.#crearContenedor();
     const img = this.#crearImagen(cerveza);
-    const descripcion = this.#crearDescripcion(cerveza);
+    const descripcion = this.#crearDescripcion();
     const details = this.#crearDetalles(cerveza);
     const boton = this.#crearBotonFavorito(cerveza);
     descripcion.appendChild(details);
@@ -31,7 +31,7 @@ class Card {
     return img;
   };
 
-  #crearDescripcion = (cerveza) => {
+  #crearDescripcion = () => {
     const descripcion = document.createElement("div");
     descripcion.classList.add("descripcion");
     return descripcion;
