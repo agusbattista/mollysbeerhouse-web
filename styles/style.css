@@ -11,6 +11,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 /* ==========================================================================
+   VARIABLES CSS
+   ========================================================================== */
+
+:root {
+  /* Fuentes */
+  --font-primary: "Fredoka", Verdana, Geneva, Tahoma, sans-serif;
+  --font-secondary: "Roboto", sans-serif;
+}
+
+/* ==========================================================================
    RESET Y ESTILOS BASE
    ========================================================================== */
 
@@ -39,14 +49,14 @@ body {
    ========================================================================== */
 
 h2 {
-  font-family: "Fredoka", Verdana, Geneva, Tahoma, sans-serif;
+  font-family: var(--font-primary);
   font-weight: 500;
   text-align: center;
 }
 
 address {
   text-align: center;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-secondary);
   font-weight: 400;
 }
 
@@ -80,7 +90,7 @@ header ul {
   justify-content: center;
   font-size: 1.5em;
   flex-wrap: wrap;
-  font-family: "Fredoka", Verdana, Geneva, Tahoma, sans-serif;
+  font-family: var(--font-primary);
   font-weight: 500;
 }
 
@@ -107,7 +117,7 @@ header li {
 #home p,
 footer p {
   text-align: center;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-secondary);
   font-weight: 400;
   font-style: normal;
 }
@@ -225,7 +235,7 @@ footer p {
 .descripcion {
   display: flex;
   justify-content: space-between;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-secondary);
   font-weight: 500;
   font-style: normal;
   background-color: #c47a3420;
@@ -272,7 +282,7 @@ footer p {
 
 #formulario,
 #formulario textarea {
-  font-family: "Roboto", sans-serif;
+  font-family: var(--font-secondary);
   font-weight: 400;
   font-style: normal;
 }
@@ -355,7 +365,7 @@ footer {
   list-style-type: none;
   margin: 0;
   padding: 1em;
-  font-family: "Fredoka", Verdana, Geneva, Tahoma, sans-serif;
+  font-family: var(--font-primary);
   font-weight: 500;
   text-align: center;
   background-color: #10100f55;
@@ -421,11 +431,11 @@ footer li {
 .swal2-confirm {
   border-radius: 10px !important;
   padding: 10px 25px !important;
-  font-family: "Roboto", sans-serif !important;
+  font-family: var(--font-secondary) !important;
 }
 
 .swal2-html-container {
-  font-family: "Roboto", sans-serif !important;
+  font-family: var(--font-secondary) !important;
   font-weight: 400 !important;
 }
 
