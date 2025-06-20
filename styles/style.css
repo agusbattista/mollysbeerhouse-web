@@ -1,12 +1,18 @@
-/* iconos */
+/* ==========================================================================
+   IMPORTS
+   ========================================================================== */
+
+/* Iconos */
 @import url("https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
-/* fuentes */
+/* Fuentes */
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-/* general */
+/* ==========================================================================
+   RESET Y ESTILOS BASE
+   ========================================================================== */
 
 * {
   box-sizing: border-box;
@@ -21,23 +27,6 @@ body {
   margin-bottom: 0;
 }
 
-.img-responsive {
-  flex-grow: 1;
-  width: 33%;
-  height: auto;
-  object-fit: cover;
-}
-
-#img-mollys {
-  display: flex;
-  justify-content: center;
-}
-
-#img-mollys > img {
-  max-width: 50%;
-  height: auto;
-}
-
 body {
   background-color: #1d1d1b;
   color: white;
@@ -45,7 +34,38 @@ body {
   margin-right: 0;
 }
 
-/* header */
+/* ==========================================================================
+   TIPOGRAFÍA
+   ========================================================================== */
+
+h2 {
+  font-family: "Fredoka", Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+  text-align: center;
+}
+
+address {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   ENLACES
+   ========================================================================== */
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: #f67c4f;
+}
+
+/* ==========================================================================
+   HEADER Y NAVEGACIÓN
+   ========================================================================== */
 
 header {
   background-color: #10100f55;
@@ -69,14 +89,42 @@ header li {
   padding: 1em;
 }
 
-/* ocultar botón de menú hamburguesa */
+/* Botones de menú hamburguesa (ocultos por defecto) */
 .abrir-menu,
 .cerrar-menu {
   display: none;
 }
 
-/* main */
-/* container del video del home */
+/* ==========================================================================
+   SECCIÓN HOME
+   ========================================================================== */
+
+#home {
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+#home p,
+footer p {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Títulos ocultos */
+#home > h1 {
+  display: none;
+}
+
+#developer > h2 {
+  display: none;
+}
+
+/* ==========================================================================
+   VIDEO Y OVERLAY
+   ========================================================================== */
+
 .video-container {
   position: relative;
   width: 100%;
@@ -84,7 +132,6 @@ header li {
   margin-bottom: 1em;
 }
 
-/* video del home*/
 .video-container video {
   width: 100%;
   height: auto;
@@ -92,7 +139,6 @@ header li {
   border-top: 6px solid rgba(13, 13, 13, 0.428);
 }
 
-/* texto superpuesto al video del home*/
 .overlay-text {
   position: absolute;
   top: 0;
@@ -106,24 +152,9 @@ header li {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-#home {
-  padding-left: 1%;
-  padding-right: 1%;
-}
-
-h2 {
-  font-family: "Fredoka", Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 500;
-  text-align: center;
-}
-
-#home p,
-footer p {
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+/* ==========================================================================
+   UBICACIÓN
+   ========================================================================== */
 
 #ubicacion {
   display: flex;
@@ -137,92 +168,36 @@ footer p {
   border: 0;
 }
 
-/* footer */
+/* ==========================================================================
+   IMÁGENES
+   ========================================================================== */
 
-footer {
-  list-style-type: none;
-  margin: 0;
-  padding: 1em;
-  font-family: "Fredoka", Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 500;
-  text-align: center;
-  background-color: #10100f55;
-  display: grid;
-  /* Dos columnas de igual tamaño para mapa y redes, y una columna más ancha para créditos */
-  grid-template-columns: 1fr 2fr 1fr;
-  /* Espacio entre las columnas */
-  grid-gap: 1em;
-  /* Alinear el contenido verticalmente abajo */
-  align-items: center;
-  color: white;
-  /* disposición de los elementos */
-  grid-template-areas:
-    "navbar logo horarios"
-    "navbar developer redes-sociales";
+.img-responsive {
+  flex-grow: 1;
+  width: 33%;
+  height: auto;
+  object-fit: cover;
 }
 
-#ubi-footer {
-  display: none;
-}
-
-.grid-logo {
-  grid-area: logo;
-}
-
-.grid-horarios {
-  grid-area: horarios;
-}
-
-.grid-developer {
-  grid-area: developer;
-}
-
-.grid-redes-sociales {
-  grid-area: redes-sociales;
-}
-
-.grid-navbar {
-  grid-area: navbar;
-}
-
-.grid-navbar ul {
+#img-mollys {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-footer ul {
-  padding: 0;
+#img-mollys > img {
+  max-width: 50%;
+  height: auto;
 }
 
-footer li {
-  display: inline;
-  list-style-type: none;
-  padding: 1em;
-  margin: 0;
-}
+/* ==========================================================================
+   SECCIÓN CERVEZAS
+   ========================================================================== */
 
-address {
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-a:hover {
-  color: #f67c4f;
-}
-
-/* iconos de redes sociales */
-nav a i {
-  font-size: 2em;
-}
-
-nav a:hover i {
-  color: #f67c4f;
+#nuestras-cervezas {
+  background-image: url("../media/img/fondo-menu-negro.png");
+  padding-top: 2em;
+  padding-bottom: 4em;
 }
 
 .container {
@@ -247,11 +222,6 @@ nav a:hover i {
   border-top-right-radius: 15px;
 }
 
-.boton {
-  border-radius: 10px;
-  height: 4em;
-}
-
 .descripcion {
   display: flex;
   justify-content: space-between;
@@ -267,6 +237,15 @@ nav a:hover i {
   position: relative;
 }
 
+/* ==========================================================================
+   BOTONES
+   ========================================================================== */
+
+.boton {
+  border-radius: 10px;
+  height: 4em;
+}
+
 .boton {
   margin-left: 1em;
   font-size: 1.25em;
@@ -278,28 +257,13 @@ nav a:hover i {
   cursor: pointer;
 }
 
-/* boton activo es para cuando una cerveza está en favoritos */
 .boton.activo {
   background: rgba(176, 126, 103, 0.8);
 }
 
-#nuestras-cervezas {
-  background-image: url("../media/img/fondo-menu-negro.png");
-  padding-top: 2em;
-  padding-bottom: 4em;
-}
-
-/* Títulos ocultos */
-
-#home > h1 {
-  display: none;
-}
-
-#developer > h2 {
-  display: none;
-}
-
-/* sección de contacto */
+/* ==========================================================================
+   FORMULARIO DE CONTACTO
+   ========================================================================== */
 
 #contacto {
   padding-top: 2em;
@@ -357,21 +321,98 @@ nav a:hover i {
   border-radius: 10px;
 }
 
-/* imágenes de cervezas y papas (pantallas grandes) */
+/* ==========================================================================
+   GALERÍA DE IMÁGENES
+   ========================================================================== */
 
-/* contenedor */
 .img-galeria {
   display: flex;
   justify-content: space-around;
 }
 
-/* imágenes */
 .img-galeria img {
   width: 30%;
   height: auto;
 }
 
-/* sweet alert */
+/* ==========================================================================
+   REDES SOCIALES
+   ========================================================================== */
+
+nav a i {
+  font-size: 2em;
+}
+
+nav a:hover i {
+  color: #f67c4f;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+footer {
+  list-style-type: none;
+  margin: 0;
+  padding: 1em;
+  font-family: "Fredoka", Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+  text-align: center;
+  background-color: #10100f55;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 1em;
+  align-items: center;
+  color: white;
+  grid-template-areas:
+    "navbar logo horarios"
+    "navbar developer redes-sociales";
+}
+
+#ubi-footer {
+  display: none;
+}
+
+.grid-logo {
+  grid-area: logo;
+}
+
+.grid-horarios {
+  grid-area: horarios;
+}
+
+.grid-developer {
+  grid-area: developer;
+}
+
+.grid-redes-sociales {
+  grid-area: redes-sociales;
+}
+
+.grid-navbar {
+  grid-area: navbar;
+}
+
+.grid-navbar ul {
+  display: flex;
+  flex-direction: column;
+}
+
+footer ul {
+  padding: 0;
+}
+
+footer li {
+  display: inline;
+  list-style-type: none;
+  padding: 1em;
+  margin: 0;
+}
+
+/* ==========================================================================
+   SWEET ALERT
+   ========================================================================== */
+
 .swal2-popup {
   border-radius: 15px !important;
   max-width: 80% !important;
@@ -388,9 +429,13 @@ nav a:hover i {
   font-weight: 400 !important;
 }
 
-/* MEDIA QUERIE (para cuando el ancho del dispositivo es pequeño) */
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+
+/* Pantallas pequeñas (móviles) */
 @media (max-width: 768px) {
-  /* header */
+  /* Header */
   .header-cerrado {
     position: fixed;
     background-color: rgba(29, 29, 27, 0.95);
@@ -399,17 +444,17 @@ nav a:hover i {
     height: 7vh;
   }
 
-  /* navbar menu hamburguesa */
+  /* Navbar menu hamburguesa */
   .abrir-menu {
     display: block;
   }
 
-  /* navbar abierta */
+  /* Navbar abierta */
   .nav {
-    /*ocultar navbar */
+    /* Ocultar navbar */
     display: none;
     opacity: 0;
-    /* propiedades de la navbar */
+    /* Propiedades de la navbar */
     visibility: hidden;
     position: fixed;
     display: flex;
@@ -421,7 +466,7 @@ nav a:hover i {
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 1);
   }
 
-  /* hacer visible la navbar */
+  /* Hacer visible la navbar */
   .nav-visible {
     opacity: 1;
     visibility: visible;
@@ -448,52 +493,53 @@ nav a:hover i {
     align-items: center;
   }
 
+  /* Ubicación */
   #ubicacion iframe {
-    /* Cambia el ancho al 50% */
     width: 80%;
     height: 30vh;
   }
 
+  /* Formulario */
   #formulario > * {
-    /* agranda el ancho que ocupan los campos del formulario */
     width: 80%;
   }
 
-  /* galería de imágenes de cervezas y papas (pantallas chicas) */
+  /* Galería de imágenes de cervezas y papas (pantallas chicas) */
 
-  /* contenedor */
+  /* Contenedor */
   .img-galeria {
-    /* permite el scroll horizontal */
+    /* Permite el scroll horizontal */
     overflow-x: auto;
-    /* hace que el scroll vaya de imagen en imagen */
+    /* Hace que el scroll vaya de imagen en imagen */
     scroll-snap-type: x mandatory;
     width: 100%;
   }
 
-  /* imágenes */
   .img-galeria img {
-    /* cada imagen ocupa 85vw de ancho para que se vea que no es la única */
+    /* Cada imagen ocupa 85vw de ancho para que se vea que no es la única */
     width: 85vw;
     height: auto;
-    /* centra cada imagen al hacer scroll */
+    /* Centra cada imagen al hacer scroll */
     scroll-snap-align: center;
     padding-top: 15px;
     padding-bottom: 15px;
     border-radius: 54px;
   }
 
-  /* imagen del centro */
+  /* Imagen del centro */
   .img-galeria img:nth-child(2) {
-    /* agrega padding a ambos lados de la imagen del medio para que se separen entre sí */
+    /* Agrega padding a ambos lados de la imagen del medio para que se separen entre sí */
     padding-left: 20px;
     padding-right: 20px;
   }
 
+  /* Imagen Molly's */
   #img-mollys > img {
     max-width: 100%;
     height: auto;
   }
 
+  /* Footer */
   footer {
     /* Cambia a una sola columna */
     grid-template-columns: 3fr;
@@ -505,12 +551,13 @@ nav a:hover i {
       "redes-sociales"
       "developer";
   }
+
   #ubi-footer {
     display: block;
   }
 }
 
-/* para volver ocultar los botones de menú hamburguesa en pantallas grandes */
+/* Pantallas grandes - ocultar botones de menú hamburguesa */
 @media (width > 768px) {
   .abrir-menu,
   .cerrar-menu {
