@@ -18,6 +18,15 @@
   /* Fuentes */
   --font-primary: "Fredoka", Verdana, Geneva, Tahoma, sans-serif;
   --font-secondary: "Roboto", sans-serif;
+
+  /* Colores principales */
+  --color-background: #1d1d1b;
+  --color-text: white;
+  --color-accent: #f67c4f;
+
+  /* Colores semi-transparentes */
+  --color-header-footer: #10100f55;
+  --color-button-active: rgba(176, 126, 103, 0.8);
 }
 
 /* ==========================================================================
@@ -35,11 +44,8 @@ html {
 body {
   margin-top: 0;
   margin-bottom: 0;
-}
-
-body {
-  background-color: #1d1d1b;
-  color: white;
+  background-color: var(--color-background);
+  color: var(--color-text);
   margin-left: 0;
   margin-right: 0;
 }
@@ -66,11 +72,11 @@ address {
 
 a {
   text-decoration: none;
-  color: white;
+  color: var(--color-text);
 }
 
 a:hover {
-  color: #f67c4f;
+  color: var(--color-accent);
 }
 
 /* ==========================================================================
@@ -78,7 +84,7 @@ a:hover {
    ========================================================================== */
 
 header {
-  background-color: #10100f55;
+  background-color: var(--color-header-footer);
   padding: 1em;
 }
 
@@ -158,7 +164,7 @@ footer p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: white;
+  color: var(--color-text);
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -268,7 +274,7 @@ footer p {
 }
 
 .boton.activo {
-  background: rgba(176, 126, 103, 0.8);
+  background: var(--color-button-active);
 }
 
 /* ==========================================================================
@@ -320,8 +326,8 @@ footer p {
 }
 
 #formulario button:hover {
-  background-color: #f67c4f;
-  color: #fff;
+  background-color: var(--color-accent);
+  color: var(--color-text);
   cursor: pointer;
 }
 
@@ -354,7 +360,7 @@ nav a i {
 }
 
 nav a:hover i {
-  color: #f67c4f;
+  color: var(--color-accent);
 }
 
 /* ==========================================================================
@@ -368,12 +374,12 @@ footer {
   font-family: var(--font-primary);
   font-weight: 500;
   text-align: center;
-  background-color: #10100f55;
+  background-color: var(--color-header-footer);
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-gap: 1em;
   align-items: center;
-  color: white;
+  color: var(--color-text);
   grid-template-areas:
     "navbar logo horarios"
     "navbar developer redes-sociales";
