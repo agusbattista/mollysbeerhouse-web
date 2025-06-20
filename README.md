@@ -14,6 +14,8 @@
 
 - La sección de cervezas y favoritos se maneja de manera dinámica mediante JavaScript (vanilla). Las cervezas se obtienen de un JSON estático servido publicamente, se utiliza LocalStorage para persistir los favoritos de manera local, se utiliza async/await y Promise para el manejo de operaciones asíncronas y Programación Orientada a Objetos para facilitar el reuso de código y su mantenimiento.
 
+- Se utilizan Unit Tests y Test Doubles para verificar el correcto funcionamiento de los objetos. Estas pruebas se automatizan mediante el framework Jest.
+
 - El deploy del sitio se hizo en GitHub Pages.
 
 - La página web es de software libre bajo la licencia GNU GPL v3.0.
