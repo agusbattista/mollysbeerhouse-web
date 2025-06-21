@@ -90,7 +90,6 @@ a:hover {
 
 header {
   background-color: var(--color-header-footer);
-  padding: var(--padding-sm);
 }
 
 header ul {
