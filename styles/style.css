@@ -90,6 +90,8 @@ a:hover {
 
 header {
   background-color: var(--color-header-footer);
+  padding-top: var(--padding-md);
+  padding-bottom: var(--padding-md);
 }
 
 header ul {
@@ -571,6 +573,24 @@ footer li {
 
   #ubi-footer {
     display: block;
+  }
+}
+
+/* Pantallas pequeñas en horizontal */
+@media (max-width: 768px) and (orientation: landscape) {
+  .nav {
+    /* Permitir scroll por si no entra el contenido */
+    overflow-y: auto;
+  }
+
+  header ul {
+    /* Reducir el tamaño de la fuente */
+    font-size: 1.1em;
+  }
+
+  header li {
+    /* Reducir el espaciado entre elementos */
+    padding: 0.5em;
   }
 }
 
