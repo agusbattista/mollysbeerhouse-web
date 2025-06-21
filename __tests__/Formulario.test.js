@@ -104,7 +104,7 @@ describe("Formulario", () => {
     expect(spyForm.reportValidity).toHaveBeenCalled();
   });
 
-  test("Muestra error de validación con sección comentarios inválida", async () => {
+  test("Muestra error de validación con sección de comentarios inválida", async () => {
     const spyForm = document.getElementById("formulario");
     spyForm.reportValidity = jest.fn();
     spyForm.querySelector("#comentarios").value = "";

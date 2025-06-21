@@ -20,7 +20,7 @@ const favManager = new Favoritos();
 const cardManager = new Card(favManager);
 favManager.setCardManager(cardManager);
 /*  El formulario se resetea luego de enviarse y maneja las alertas al usuario. 
-    Sólo se necesita invocar al constructor. */
+    Sólo se necesita instanciar el objeto. */
 const formulario = new Formulario(alerta);
 const cerveza = new Cerveza(alerta);
 

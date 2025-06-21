@@ -523,7 +523,7 @@ footer li {
     width: 80%;
   }
 
-  /* Galería de imágenes de cervezas y papas (pantallas chicas) */
+  /* Galería de imágenes de cervezas y papas */
 
   /* Contenedor */
   .img-galeria {
@@ -576,7 +576,7 @@ footer li {
   }
 }
 
-/* Pantallas pequeñas en horizontal - navbar */
+/* Pantallas pequeñas (móviles) en horizontal - navbar */
 @media (max-width: 768px) and (orientation: landscape) {
   .nav {
     /* Permitir scroll por si no entra el contenido */
