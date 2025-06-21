@@ -27,6 +27,11 @@
   /* Colores semi-transparentes */
   --color-header-footer: #10100f55;
   --color-button-active: rgba(176, 126, 103, 0.8);
+
+  /* Espaciado */
+  --padding-sm: 1em;
+  --padding-md: 2em;
+  --padding-lg: 4em;
 }
 
 /* ==========================================================================
@@ -85,7 +90,7 @@ a:hover {
 
 header {
   background-color: var(--color-header-footer);
-  padding: 1em;
+  padding: var(--padding-sm);
 }
 
 header ul {
@@ -102,7 +107,7 @@ header ul {
 
 header li {
   margin: 0;
-  padding: 1em;
+  padding: var(--padding-sm);
 }
 
 /* Botones de menú hamburguesa (ocultos por defecto) */
@@ -129,11 +134,11 @@ footer p {
 }
 
 /* Títulos ocultos */
-#home > h1 {
+#home>h1 {
   display: none;
 }
 
-#developer > h2 {
+#developer>h2 {
   display: none;
 }
 
@@ -201,7 +206,7 @@ footer p {
   align-items: center;
 }
 
-#img-mollys > img {
+#img-mollys>img {
   max-width: 50%;
   height: auto;
 }
@@ -212,8 +217,8 @@ footer p {
 
 #nuestras-cervezas {
   background-image: url("../media/img/fondo-menu-negro.png");
-  padding-top: 2em;
-  padding-bottom: 4em;
+  padding-top: var(--padding-md);
+  padding-bottom: var(--padding-lg);
 }
 
 .container {
@@ -228,7 +233,7 @@ footer p {
 
 .item {
   width: 20em;
-  padding-top: 2em;
+  padding-top: var(--padding-md);
 }
 
 .img-cerveza {
@@ -282,8 +287,8 @@ footer p {
    ========================================================================== */
 
 #contacto {
-  padding-top: 2em;
-  padding-bottom: 4em;
+  padding-top: var(--padding-md);
+  padding-bottom: var(--padding-lg);
 }
 
 #formulario,
@@ -302,21 +307,21 @@ footer p {
   margin-bottom: 2em;
 }
 
-#formulario > * {
+#formulario>* {
   width: 50%;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: var(--padding-sm);
+  padding-bottom: var(--padding-sm);
 }
 
 #formulario input {
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: var(--padding-sm);
+  padding-right: var(--padding-sm);
 }
 
 #formulario textarea {
   height: 25em;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: var(--padding-sm);
+  padding-right: var(--padding-sm);
 }
 
 #formulario button {
@@ -370,7 +375,7 @@ nav a:hover i {
 footer {
   list-style-type: none;
   margin: 0;
-  padding: 1em;
+  padding: var(--padding-sm);
   font-family: var(--font-primary);
   font-weight: 500;
   text-align: center;
@@ -421,7 +426,7 @@ footer ul {
 footer li {
   display: inline;
   list-style-type: none;
-  padding: 1em;
+  padding: var(--padding-sm);
   margin: 0;
 }
 
@@ -451,6 +456,7 @@ footer li {
 
 /* Pantallas pequeñas (móviles) */
 @media (max-width: 768px) {
+
   /* Header */
   .header-cerrado {
     position: fixed;
@@ -516,7 +522,7 @@ footer li {
   }
 
   /* Formulario */
-  #formulario > * {
+  #formulario>* {
     width: 80%;
   }
 
@@ -550,7 +556,7 @@ footer li {
   }
 
   /* Imagen Molly's */
-  #img-mollys > img {
+  #img-mollys>img {
     max-width: 100%;
     height: auto;
   }
@@ -575,6 +581,7 @@ footer li {
 
 /* Pantallas grandes - ocultar botones de menú hamburguesa */
 @media (width > 768px) {
+
   .abrir-menu,
   .cerrar-menu {
     display: none !important;
