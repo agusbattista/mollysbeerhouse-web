@@ -499,7 +499,7 @@ footer li {
     top: 0;
     right: 0;
     margin-right: 1em;
-    margin-top: 0.5em;
+    margin-top: 1em;
     z-index: 3;
     font-size: 1em;
     background-color: rgba(255, 255, 255, 0.8);
@@ -576,7 +576,7 @@ footer li {
   }
 }
 
-/* Pantallas pequeñas en horizontal */
+/* Pantallas pequeñas en horizontal - navbar */
 @media (max-width: 768px) and (orientation: landscape) {
   .nav {
     /* Permitir scroll por si no entra el contenido */
@@ -584,12 +584,12 @@ footer li {
   }
 
   header ul {
-    /* Reducir el tamaño de la fuente */
-    font-size: 1.1em;
+    /* Reduce el tamaño de la fuente */
+    font-size: 1.25em;
   }
 
   header li {
-    /* Reducir el espaciado entre elementos */
+    /* Reduce el espaciado entre elementos */
     padding: 0.5em;
   }
 }
