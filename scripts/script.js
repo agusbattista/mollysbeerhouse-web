@@ -1,3 +1,5 @@
+"use strict";
+
 import { CONFIG } from "./config.js";
 import Card from "./Card.js";
 import Alerta from "./Alerta.js";
