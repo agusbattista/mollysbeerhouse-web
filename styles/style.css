@@ -592,6 +592,11 @@ footer li {
     /* Reduce el espaciado entre elementos */
     padding: 0.5em;
   }
+
+  .img-galeria img {
+    width: 45vw;
+    height: auto;
+  }
 }
 
 /* Pantallas grandes - ocultar botones de menú hamburguesa */
