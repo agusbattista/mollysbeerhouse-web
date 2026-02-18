@@ -1,160 +1,248 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es-AR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title translate="no">MOLLY'S Beer House</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <meta name="theme-color" content="#1d1d1b">
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#1d1d1b" />
     <!-- Datos para cuando el sitio es compartido -->
-    <meta property="og:title" content="MOLLY'S Beer House">
-    <meta property="og:description" content="Sitio web de Molly's Beer House, cervecería de la ciudad de La Plata">
-    <meta property="og:image" content="https://agusbattista.github.io/mollysbeerhouse-web/media/img/logo.jpg">
-    <meta property="og:url" content="https://agusbattista.github.io/mollysbeerhouse-web/">
-    <meta property="og:type" content="website">
-</head>
+    <meta property="og:title" content="MOLLY'S Beer House" />
+    <meta
+      property="og:description"
+      content="Sitio web de Molly's Beer House, cervecería de la ciudad de La Plata"
+    />
+    <meta
+      property="og:image"
+      content="https://agusbattista.github.io/mollysbeerhouse-web/media/img/logo.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://agusbattista.github.io/mollysbeerhouse-web/"
+    />
+    <meta property="og:type" content="website" />
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
-        <nav id="nav" class="nav">
-            <button id="cerrar" class="cerrar-menu"><i class="bi bi-x-lg"></i></button>
-            <ul class="nav-list">
-                <li><a href="#home">HOME</a></li>
-                <li><a href="#nuestras-cervezas">NUESTRAS CERVEZAS</a></li>
-                <!-- li oculto si no hay fav -->
-                <li id="a-favoritas"><a href="#cervezas-favoritas">CERVEZAS FAVORITAS</a></li>
-                <li><a href="media/pdf/menu-digital.pdf" target="_blank">CARTA ONLINE</a></li>
-                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeKn3tKf_c70fUGdNhm_5KPWafdZt7wcvM9i9Zglyz4U-vvpw/viewform"
-                        target="_blank">TRABAJA
-                        CON NOSOTROS</a></li>
-                <li><a href="#ubicacion">UBICACIÓN</a></li>
-                <li><a href="#contacto">CONTACTO</a></li>
-            </ul>
-        </nav>
+      <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+      <nav id="nav" class="nav">
+        <button id="cerrar" class="cerrar-menu">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <ul class="nav-list">
+          <li><a href="#home">HOME</a></li>
+          <li><a href="#nuestras-cervezas">NUESTRAS CERVEZAS</a></li>
+          <!-- li oculto si no hay fav -->
+          <li id="a-favoritas">
+            <a href="#cervezas-favoritas">CERVEZAS FAVORITAS</a>
+          </li>
+          <li>
+            <a href="media/pdf/menu-digital.pdf" target="_blank"
+              >CARTA ONLINE</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeKn3tKf_c70fUGdNhm_5KPWafdZt7wcvM9i9Zglyz4U-vvpw/viewform"
+              target="_blank"
+              >TRABAJA CON NOSOTROS</a
+            >
+          </li>
+          <li><a href="#ubicacion">UBICACIÓN</a></li>
+          <li><a href="#contacto">CONTACTO</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section id="home">
-            <h1 translate="no">MOLLY'S Beer House</h1>
-            <div id="img-mollys"><img src="media/img/logo.jpg" alt="Logo de Molly's Beer House">
-            </div>
-            <div class="video-container">
-                <video autoplay muted loop playsinline>
-                    <source src="media/video/mollys-video-panoramico.mp4" type="video/mp4">
-                    Tu navegador no soporta el elemento de video.
-                </video>
-                <div class="overlay-text">
-                    <h2 translate="no">MOLLY'S BEER HOUSE</h2>
-                    <p>¡Las mejores cervezas del país en un solo lugar! 🍻
-                        Todos los días a partir de las 18:30 hs 🙌🏼</p>
-                </div>
-            </div>
-            <div class="img-galeria">
-                <img src="media/img/cervezas.png" alt="Tres cervezas de Molly's Beer House" class="img-responsive">
-                <img src="media/img/papas.png" alt="Papas por Mollys Beer House" class="img-responsive">
-                <img src="media/img/brindis-cerveza.jpg" alt="Brindis con dos cervezas de Mollys Beer House"
-                    class="img-responsive">
-            </div>
-            <br>
-        </section>
+      <section id="home">
+        <h1 translate="no">MOLLY'S Beer House</h1>
+        <div id="img-mollys">
+          <img src="media/img/logo.jpg" alt="Logo de Molly's Beer House" />
+        </div>
+        <div class="video-container">
+          <video autoplay muted loop playsinline>
+            <source
+              src="media/video/mollys-video-panoramico.mp4"
+              type="video/mp4"
+            />
+            Tu navegador no soporta el elemento de video.
+          </video>
+          <div class="overlay-text">
+            <h2 translate="no">MOLLY'S BEER HOUSE</h2>
+            <p>
+              ¡Las mejores cervezas del país en un solo lugar! 🍻 Todos los días
+              a partir de las 18:30 hs 🙌🏼
+            </p>
+          </div>
+        </div>
+        <div class="img-galeria">
+          <img
+            src="media/img/cervezas.png"
+            alt="Tres cervezas de Molly's Beer House"
+            class="img-responsive"
+          />
+          <img
+            src="media/img/papas.png"
+            alt="Papas por Mollys Beer House"
+            class="img-responsive"
+          />
+          <img
+            src="media/img/brindis-cerveza.jpg"
+            alt="Brindis con dos cervezas de Mollys Beer House"
+            class="img-responsive"
+          />
+        </div>
+        <br />
+      </section>
 
-        <section id="nuestras-cervezas">
-            <h2>NUESTRAS CERVEZAS</h2>
-            <div class="container">
-                <!-- Las cards son generadas mediante JavaScript -->
-            </div>
-        </section>
+      <section id="nuestras-cervezas">
+        <h2>NUESTRAS CERVEZAS</h2>
+        <div class="container">
+          <!-- Las cards son generadas mediante JavaScript -->
+        </div>
+      </section>
 
-        <section id="cervezas-favoritas">
-            <!-- Sección oculta por defecto si no hay cervezas favoritas -->
-            <h2>CERVEZAS FAVORITAS</h2>
-            <div class="favoritas-container">
-                <!-- Las cards son generadas mediante JavaScript -->
-            </div>
-        </section>
+      <section id="cervezas-favoritas">
+        <!-- Sección oculta por defecto si no hay cervezas favoritas -->
+        <h2>CERVEZAS FAVORITAS</h2>
+        <div class="favoritas-container">
+          <!-- Las cards son generadas mediante JavaScript -->
+        </div>
+      </section>
 
-        <section id="contacto">
-            <h2>CONTACTO</h2>
-            <form id="formulario" action="https://formspree.io/f/xrbgpqqb" method="POST">
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre" maxlength="50" placeholder="Juan Pérez" required />
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" maxlength="100" placeholder="juanperez@gmail.com"
-                    pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}"
-                    required>
-                <label for="comentarios">Comentarios</label>
-                <textarea name="comentarios" id="comentarios" maxlength="5000"
-                    placeholder="Escribí acá tus comentarios y sugerencias..." required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
+      <section id="contacto">
+        <h2>CONTACTO</h2>
+        <form
+          id="formulario"
+          action="https://formspree.io/f/xrbgpqqb"
+          method="POST"
+        >
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            name="nombre"
+            id="nombre"
+            maxlength="50"
+            placeholder="Juan Pérez"
+            required
+          />
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            maxlength="100"
+            placeholder="juanperez@gmail.com"
+            pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}"
+            required
+          />
+          <label for="comentarios">Comentarios</label>
+          <textarea
+            name="comentarios"
+            id="comentarios"
+            maxlength="5000"
+            placeholder="Escribí acá tus comentarios y sugerencias..."
+            required
+          ></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
 
-        <section id="ubicacion">
-            <h2>¡VENÍ A CONOCERNOS!</h2>
-            <address translate="no">Av. 53 N°324, La Plata</address>
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.805279950875!2d-57.944569324677346!3d-34.91133577284564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e90022a414fd%3A0xe9a691a4ca6cb7c4!2sMolly&#39;s%20Beer%20House!5e0!3m2!1ses!2sar!4v1729710314264!5m2!1ses!2sar"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </section>
+      <section id="ubicacion">
+        <h2>¡VENÍ A CONOCERNOS!</h2>
+        <address translate="no">Av. 53 N°324, La Plata</address>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.805279950875!2d-57.944569324677346!3d-34.91133577284564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e90022a414fd%3A0xe9a691a4ca6cb7c4!2sMolly&#39;s%20Beer%20House!5e0!3m2!1ses!2sar!4v1729710314264!5m2!1ses!2sar"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+        </iframe>
+      </section>
     </main>
 
     <footer class="grid-container">
-        <section id="horarios" class="grid-horarios">
-            <h2>HORARIOS</h2>
-            <p>Todos los días a partir de 18:30 hs </p>
-        </section>
+      <section id="horarios" class="grid-horarios">
+        <h2>HORARIOS</h2>
+        <p>Todos los días a partir de 18:30 hs</p>
+      </section>
 
-        <section id="footernavbar" class="grid-navbar">
-            <nav>
-                <ul>
-                    <li><a href="#nuestras-cervezas">NUESTRAS CERVEZAS</a></li>
-                    <!-- li oculto si no hay fav -->
-                    <li id="a-footer-favoritas"><a href="#cervezas-favoritas">CERVEZAS FAVORITAS</a></li>
-                    <li><a href="media/pdf/menu-digital.pdf" target="_blank">CARTA ONLINE</a></li>
-                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeKn3tKf_c70fUGdNhm_5KPWafdZt7wcvM9i9Zglyz4U-vvpw/viewform"
-                            target="_blank">TRABAJA
-                            CON NOSOTROS</a></li>
-                    <li id="ubi-footer"><a href="#ubicacion">UBICACIÓN</a></li>
-                    <li><a href="#contacto">CONTACTO</a></li>
-                </ul>
-            </nav>
-        </section>
+      <section id="footernavbar" class="grid-navbar">
+        <nav>
+          <ul>
+            <li><a href="#nuestras-cervezas">NUESTRAS CERVEZAS</a></li>
+            <!-- li oculto si no hay fav -->
+            <li id="a-footer-favoritas">
+              <a href="#cervezas-favoritas">CERVEZAS FAVORITAS</a>
+            </li>
+            <li>
+              <a href="media/pdf/menu-digital.pdf" target="_blank"
+                >CARTA ONLINE</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSeKn3tKf_c70fUGdNhm_5KPWafdZt7wcvM9i9Zglyz4U-vvpw/viewform"
+                target="_blank"
+                >TRABAJA CON NOSOTROS</a
+              >
+            </li>
+            <li id="ubi-footer"><a href="#ubicacion">UBICACIÓN</a></li>
+            <li><a href="#contacto">CONTACTO</a></li>
+          </ul>
+        </nav>
+      </section>
 
-        <section id="footerlogo" class="grid-logo">
-            <a href="#home"><img src="media/img/footer-logo.avif" alt="Logo de Molly's Beer House"></a>
-        </section>
+      <section id="footerlogo" class="grid-logo">
+        <a href="#home"
+          ><img
+            src="media/img/footer-logo.avif"
+            alt="Logo de Molly's Beer House"
+        /></a>
+      </section>
 
-        <section id="developer" class="grid-developer">
-            <h2>DEVELOPER</h2>
-            <p>&copy; 2024 MOLLY'S Beer House. Todos los derechos reservados.</p>
-            <p>Sitio desarrollado por Agustín Battista.</p>
-            <a href="https://github.com/agusbattista" target="_blank"><i class="fi fi-brands-github"
-                    rel="noopener noreferrer"></i></a>
-        </section>
+      <section id="developer" class="grid-developer">
+        <h2>DEVELOPER</h2>
+        <p>
+          &copy; 2024-2026 MOLLY'S Beer House. Todos los derechos reservados.
+        </p>
+        <p>Sitio desarrollado por Agustín Battista.</p>
+        <a href="https://github.com/agusbattista" target="_blank"
+          ><i class="fi fi-brands-github" rel="noopener noreferrer"></i
+        ></a>
+      </section>
 
-        <section id="redes-sociales" class="grid-redes-sociales">
-            <h2>¡SEGUINOS!</h2>
-            <nav>
-                <ul>
-                    <li><a href="https://www.facebook.com/mollysbeerhouse" target="_blank" rel="noopener noreferrer"><i
-                                class="fi fi-brands-facebook"></i></a>
-                    </li>
-                    <li><a href="https://www.instagram.com/mollysbeerhouse/" target="_blank"
-                            rel="noopener noreferrer"><i class="fi fi-brands-instagram"></i></a>
-                    </li>
-                </ul>
-            </nav>
-        </section>
+      <section id="redes-sociales" class="grid-redes-sociales">
+        <h2>¡SEGUINOS!</h2>
+        <nav>
+          <ul>
+            <li>
+              <a
+                href="https://www.facebook.com/mollysbeerhouse"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fi fi-brands-facebook"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/mollysbeerhouse/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fi fi-brands-instagram"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
+      </section>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="scripts/script.js"></script>
-</body>
-
+  </body>
 </html>
